@@ -1,9 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :item_select, only: %i[show edit destroy update]
+  before_action :item_select, only: %i[show edit destroy]
 
   def index
-    @user = User.find(params[:profile_id])
-    @items = Item.where(user_id: params[:profile_id])
+    @items = Item.where(user_id: current_user.id)
   end
 
   def show; end
@@ -13,9 +12,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create!(set_params)
-    if @item.save
-      redirect_to user_profile_item_path(@item)
+    @item = Item.new(item_params)
+    @item.user_id = current_user.id
+    if @item.save!
+      redirect_to user_items_path
     else
       render :new
     end
@@ -24,19 +24,20 @@ class ItemsController < ApplicationController
   def edit; end
 
   def update
-    @item.update(set_params)
-    redirect_to user_profile_item_path(@item)
+    @item = Item.find(params[:format])            ### ???????????????????????
+    @item.update(item_params)
+    redirect_to user_items_path
   end
 
   def destroy
     @item.destroy
-    redirect_to cocktails_path
+    redirect_to user_items_path
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :message, :notification, :photo)
+    params.require(:item).permit(:name, :message, :notification, :photo, :user)
   end
 
   def item_select

@@ -22,7 +22,6 @@ class ProfilesController < ApplicationController
     else
       render :new
     end
-
   end
 
   def update
@@ -30,7 +29,6 @@ class ProfilesController < ApplicationController
 
   def public
   end
-
 
   private
 
@@ -52,6 +50,4 @@ class ProfilesController < ApplicationController
       standalone: true
     )
   end
-
-
 end
