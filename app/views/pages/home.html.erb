@@ -1,2 +1,5 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>This is a home page</h1>
+<% unless current_user.nil? %>
+<%= link_to "Create a profile", profiles_new_path %>
+<% end %>
+
