@@ -1,0 +1,7 @@
+<h1>Profile SHOW page!</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<% unless @profile.nil? %>
+  <p>Hello <%= @profile.first_name %></p>
+<% else %>
+  <%= link_to "Create a profile", profiles_new_path %>
+<% end %>

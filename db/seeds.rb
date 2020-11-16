@@ -54,6 +54,5 @@ puts "Creating some random messages"
 puts "          ... done!"
 
 puts "Creating some random objects"
-  file = URI.open("https://source.unsplash.com/1600x900/?object,item")
-  20.times { Item.create!(name: Faker::Beer.brand, user_id: users.sample, message: Faker::Hacker.say_something_smart).photo.attach(io: file, filename: 'item.png', content_type: 'image/png') }
+  20.times { Item.create!(name: Faker::Beer.brand, user_id: users.sample, message: Faker::Hacker.say_something_smart) }
 puts "          ... done!"

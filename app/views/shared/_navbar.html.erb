@@ -18,7 +18,9 @@
           <%= link_to "Chatrooms", chatrooms_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.profile.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% tag = 'defaultavatar' %>
+          <% tag = current_user.profile.avatar.key if current_user.profile && current_user.profile.avatar.attached? == true %>
+          <%= cl_image_tag tag, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My Items", user_profile_items_path(current_user), class: "dropdown-item" %>
             <%= link_to "Edit my profile", edit_user_profile_path(current_user), class: "dropdown-item" %>

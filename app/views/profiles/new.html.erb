@@ -1,0 +1,17 @@
+<h1>Let's create yourself a profile and a QR code! </h1>
+<div class="col-12 col-md-8 px-5 br-2">
+  <h2>Tell us more about you...</h2>
+  <%= simple_form_for @profile do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :birthday, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 8, discard_day: true,
+                              order: [:month, :year] %>
+    <%= f.input :phone_number %>
+    <%= f.input :address %>
+    <%= f.input :generic_message %>
+    <%= f.input :avatar, as: :file %>
+    <%= f.button :submit, class: "btn-booker" %>
+  <% end %>
+</div>
+
