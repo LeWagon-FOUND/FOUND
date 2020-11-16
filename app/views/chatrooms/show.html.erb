@@ -1,12 +1,11 @@
 <h1>#<%= @chatroom.name %></h1>
 
-
 <!-- List of Messages -->
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
       <i class="author">
-        <span><%= message.user.username %></span>
+        <span><%= message.user.profile.full_name %></span>
         <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
       </i>
       <p><%= message.content %></p>
