@@ -1,0 +1,127 @@
+<% if   @profile.nil? %>
+<h1>You don"t have any profile yet, create one and get your QR code!</h1>
+<%= link_to "Create your profile", new_profile_path %>
+<% else %>
+<div class="one">
+  <div class="container py-4">
+    <h1> Because Loosing stuff belong to the past,</h1>
+    <h1>we introduce you <strong>FOUND</strong></h1>
+    <br>
+    <div class="row">
+      <div class="col-12 col-md-6 text-center">
+        <h3>An easy web app to keep an eye an all your items</h3>
+      </div>
+      <div class="col-12 col-md-6 h-100 border-left text-center">
+        <h3>And the best is that it is as cheap as free.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="two text-white">
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-6 t-50">
+        <br>
+        <br>
+        <h2>Stick this QR code to all your belongings</h2>
+      </div>
+      <div class="col-12 col-md-4 offset-md-6" id="svg">
+        <%= @profile.svg.html_safe %>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="three">
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <h3>Reward the founder with a donation to your favorite NGO.</h3>
+    <br>
+    <br>
+    <h4>Choose from a list of NGO's you will donate to when someone find one valuable thing you losted!</h4>
+  </div>
+</div>
+<div class="one d-flex justify-content-center align-items-center">
+  <div class="container d-flex justify-content-center align-items-center">
+    <%= link_to "View your public profile", public_profile_path(current_user), id: "pp" %>
+  </div>
+</div>
+<div class="two">
+  <div class="container">
+
+  </div>
+</div>
+<div class="three">
+  <div class="container">
+
+  </div>
+</div>
+<div class="one">
+  <div class="container">
+
+  </div>
+</div>
+<div class="two">
+  <div class="container">
+
+  </div>
+</div>
+<div class="three">
+  <div class="container">
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% end %>
+

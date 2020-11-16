@@ -11,3 +11,28 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+a:hover {
+  text-decoration: none;
+}
+
+
+
+#svg {
+  position: absolute;
+  top:175px;
+}
+
+
+#pp {
+  position: absolute;
+  font-size: 2em;
+  padding: 67px;
+  background-color: $peach;
+  border-radius: 20px;
+  color:white;
+}
+
+.pp:hover {
+  color:$blanc;
+}

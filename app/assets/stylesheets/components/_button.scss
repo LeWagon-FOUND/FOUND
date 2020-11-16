@@ -1,0 +1,27 @@
+.btn-found {
+  color: white;
+  background-color: $peach;
+  border-radius: 8px;
+  padding: 6px 10px;
+  &:hover {
+    text-decoration: none;
+    color:grey;
+  }
+}
+
+.btn-found-purple {
+  color: white;
+  background-color: $purple;
+  border-radius: 20px;
+  padding: 6px 10px;
+  &:hover {
+    text-decoration: none;
+    color:#e8e8e8;
+  }
+}
+
+// .btn-found:hover {
+//   background: linear-gradient($purple, $blue);
+//   color: white;
+// }
+

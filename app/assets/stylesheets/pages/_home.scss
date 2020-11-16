@@ -1,1 +1,71 @@
 // Specific CSS for your home-page
+
+.banner {
+  background-image:
+  linear-gradient(
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)
+  ),
+  url("https://source.unsplash.com/random/1400x900");
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  object-fit: cover;
+  background-repeat: no-repeat;
+
+}
+
+.logo {
+  position: absolute;
+  width: 666px; /*the image width*/
+  height: auto; /*the image height*/
+  left: 50%;
+  top: 13%;
+  margin-left: -333px; /*half the image width*/
+}
+
+.banner h1 {
+  color: white;
+  font-size: 50px;
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  width: 100%;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+#go {
+  font-size: 42px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  position: fixed;
+  bottom: 19px;
+  right: 50%;
+  left: 50%;
+  cursor: pointer;
+}
+
+.far:hover {
+  color:#2a69bc;
+  text-shadow: 0 0 15px #2a69bc;
+  transition: all 0.5s ease;
+  font-size: 50px;
+}
