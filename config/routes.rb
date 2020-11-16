@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   end
 
   resource :user do
-    resources :profiles do
       resources :items
-    end
   end
 
   resources :profiles
