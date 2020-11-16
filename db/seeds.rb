@@ -8,8 +8,8 @@
 require 'faker'
 
 puts "Cleaning up the DB"
-  User.destroy_all
   Message.destroy_all
+  User.destroy_all
   Chatroom.destroy_all
 puts "          ... done!"
 
@@ -31,8 +31,5 @@ puts "Creating some random messages"
   chatrooms = []
   User.all.each { |user| users << user.id }
   Chatroom.all.each { |chatroom| chatrooms << chatroom.id }
-  10.times do {
-    Message.create!(content: Faker::Quote.yoda, user_id: users.sample, chatroom_id: chatrooms.sample)
-  }
-  end
+  10.times { Message.create!(content: Faker::Quote.yoda, user_id: users.sample, chatroom_id: chatrooms.sample) }
 puts "          ... done!"
