@@ -1,0 +1,22 @@
+
+
+
+<h1>My items</h1>
+  <% @items.each do |item| %>
+  <% item.photo.attached? ? img = item.photo.key : img = "defaultavatar" %>
+    <div class="card m-5" style="width: 18rem;">
+      <img class="card-img-top" src="<%= cl_image_path img %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= item.name %></h5>
+        <p class="card-text"> <%= item.message %></p>
+      </div>
+      <div class="card-body">
+        <%= link_to 'Show', user_profile_item_path(@user, item), class: "btn btn-outline-success"  %>
+        <%= link_to 'Edit', edit_user_profile_item_path(@user, item), class: "btn btn-outline-warning"  %>
+        <%= link_to 'Remove',
+        user_profile_items_path(@user, item),
+        method: :delete,
+        data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+      </div>
+    </div>
+  <% end %>

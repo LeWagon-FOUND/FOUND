@@ -1,6 +1,6 @@
 class Profile < ApplicationRecord
   has_one_attached :avatar
-  has_many :objects, through: :users
+  has_many :items, through: :users
   belongs_to :user
 
   def full_name
