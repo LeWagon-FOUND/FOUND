@@ -13,5 +13,4 @@ class User < ApplicationRecord
   def incomplete_name
     "#{first_name} #{last_name[0]}"
   end
-
 end

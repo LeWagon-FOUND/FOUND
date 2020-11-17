@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
- # skip_before_action :authenticate_user!, only: [:new]
-  def new
-
+  def create
+    chatroom = Chatroom.create!(name: "Found your item", finder_user_id: current_user.id, user_id: params[:chatroom][:user_id])
+    redirect_to chatroom_path(chatroom)
   end
 
   def index
@@ -11,5 +11,11 @@ class ChatroomsController < ApplicationController
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
+  end
+
+  private
+
+  def chatroom_params
+    params.require(:chatroom).permit(:user)
   end
 end
