@@ -54,5 +54,6 @@ puts "Creating some random messages"
 puts "          ... done!"
 
 puts "Creating some random objects"
-  20.times { Item.create!(name: Faker::Beer.brand, user_id: users.sample, message: Faker::Hacker.say_something_smart, notification: false) }
+  notification = ["true", "false"]
+  30.times { Item.create!(name: Faker::Beer.brand, user_id: users.sample, message: Faker::Hacker.say_something_smart, notification: notification.sample) }
 puts "          ... done!"

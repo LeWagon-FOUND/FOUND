@@ -1,7 +1,7 @@
 <%= simple_form_for [current_user, @item] do |f| %>
     <%= f.input :name %>
     <%= f.input :message %>
-    <%= f.input :notification, as: :boolean, checked_value: true, unchecked_value: false %>
+    <%= f.input :notification, as: :boolean, checked_value: "true", unchecked_value: "false" %>
     <%= f.input :photo, as: :file %>
     <%= f.button :submit %>
 <% end %>
