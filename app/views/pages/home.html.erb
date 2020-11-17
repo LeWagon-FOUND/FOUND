@@ -1,20 +1,40 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Introducing FOUNDR</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slicknav.css">
 
-  <body>
-    <div class="banner">
-      <div class="container">
-        <br>
-        <h1><strong>INTRODUCING FOUNDR</strong></h1>
-        <br>
-        <br>
-        <p>Loosing items is Revolut!</p>
-        <br>
-        <a href="/dashboard" class="far fa-arrow-alt-circle-down" id="go"></a>
-      </div>
+</head>
+<body>
+  <div class="banner-area">
+    <header>
+      <a href="#" class="logo">FOUNDR</a>
+
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="banner-text">
+      <h2>TIRED OF LOSING YOUR BELONGINS?</h2>
+      <p>Sign up to get more chances of finding it back</p>
+      <a href="/dashboard">Sign up!</a>
     </div>
-  </body>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="jquery.slicknav.js"></script>
+  <script>
+  $(".menu").slicknav({
+      'appendTo' : 'header'
+      'label' : ''
+  });
+  </script>
+ 
+</body>
 </html>
 

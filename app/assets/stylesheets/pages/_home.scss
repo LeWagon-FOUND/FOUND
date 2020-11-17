@@ -1,71 +1,323 @@
-// Specific CSS for your home-page
+  // Specific CSS for your home-page
 
-.banner {
-  background-image:
-  linear-gradient(
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.2)
-  ),
-  url("https://source.unsplash.com/random/1400x900");
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  overflow: hidden;
-  position: fixed;
-  right: 0;
-  top: 0;
-  object-fit: cover;
-  background-repeat: no-repeat;
+.banner-area {
+  background-image: url("https://wallpapercave.com/wp/wp5006298.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 15px 60px;
+}
+
+.menu {
+  width: 42%;
+  float: right;
+  list-style: none;
+}
+
+.menu li {
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  float: left;
+}
+
+.menu li:hover {
+  background: white;
+}
+
+.menu li:hover a {
+  color: black;
+}
+
+
+.menu li a {
+  text-decoration: none;
+  font-family: baloo;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .logo {
-  position: absolute;
-  width: 666px; /*the image width*/
-  height: auto; /*the image height*/
-  left: 50%;
-  top: 13%;
-  margin-left: -333px; /*half the image width*/
-}
-
-.banner h1 {
-  color: white;
-  font-size: 50px;
-  left: 0;
-  line-height: 200px;
-  margin-top: -100px;
-  position: absolute;
-  text-align: center;
-  top: 45%;
-  width: 100%;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  left: 0;
-  line-height: 200px;
-  margin-top: -100px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 100%;
-}
-
-#go {
-  font-size: 42px;
   text-decoration: none;
-  color: rgb(255, 255, 255);
-  position: fixed;
-  bottom: 19px;
-  right: 50%;
-  left: 50%;
-  cursor: pointer;
+  color: #fff;
+  font-size: 30px;
+  font-family: big john;
+  padding: 20px 0;
+  width: 20%;
+  float: left;
 }
 
-.far:hover {
-  color:#2a69bc;
-  text-shadow: 0 0 15px #2a69bc;
-  transition: all 0.5s ease;
-  font-size: 50px;
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #4B1910;
+  text-align: center;
 }
+
+.banner-text h2 {
+  font-family: baloo;
+  margin: 0;
+  font-size: 70px;
+  color: #0F2836;
+}
+
+.banner-text p {
+  font-size: 22px;
+  margin: 0;
+  font-family: poppins;
+}
+
+.banner-text a {
+  text-decoration: none;
+  border: 1px solid #fff;
+  font-size: 17px;
+  padding: 10px 35px;
+  color: white;
+  display: inline-block;
+  margin-top: 5%;
+  font-family: poppins;
+  text-transform: uppercase;
+}
+
+.banner-text a:hover  {
+  border-color: white;
+  background: white;
+  transition: .9s;
+  color: black;
+}
+
+
+
+@media all and (max-width: 769px){
+  .slicknav_menu{
+    display: block;
+    width: 40%;
+    float: right;
+    background: transparent;
+  }
+
+  .slicknav_menu {
+    display: none;
+  }
+
+  .slicknav_nav a:hover {
+    background: transparent;
+    color: #fff;
+  }
+
+  .menu {
+    display: none;
+  }
+  .slicknav_btn {
+    margin: 10px 5px 6px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: yellow;
+  }
+  
+  .slicknav_menu .slicknav_menutxt {
+    color: #000;
+    text-shadow: none;
+  }
+  
+  .slicknav_menu .slicknav_icon-bar {
+    background-color: #262626;
+    box-shadow: none;
+  }
+  
+  .banner-text {
+    top: 55%;
+  }
+  
+  .header {
+    padding: 5px 10px;
+  }
+
+  .banner-text h2 {
+    font-size: 21px;
+  }
+
+  .banner-text p {
+    font-size: 15px;
+  }
+
+  .banner-text a {
+    font-size: 11px;
+    padding: 10px 5px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  li:hover {
+    background: yellow;
+  }
+  .slicknav_nav li:hover a {
+    color: 000;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
+ .banner {
+    background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("home_background.png");
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+  }
+
+  .container p1 p2 p3 {
+    line-height: 10rem;
+  }
+
+  .logo {
+    position: absolute;
+    width: 666px; /*the image width
+    height: auto; /*the image height
+    left: 50%;
+    top: 13%;
+    margin-left: -333px; /*half the image width
+  }
+
+  .banner h1 {
+    color: white;
+    font-size: 50px;
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    width: 100%;
+  }
+
+  .p1, .p2, .p3 {
+    font-size: 20px;
+    color: white;
+    right: -30%;
+    line-height: 200px;
+    margin-top: -300px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 300px;
+    line-height: 1.6;
+  }
+
+  #go {
+    font-size: 42px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 50px;
+    right: 19%;
+    cursor: pointer;
+  }
+
+  .far:hover {
+    color:#2a69bc;
+    text-shadow: 0 0 15px #2a69bc;
+    transition: all 0.5s ease;
+    font-size: 50px;
+  }
+*/
