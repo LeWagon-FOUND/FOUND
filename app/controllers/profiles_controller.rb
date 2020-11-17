@@ -28,6 +28,7 @@ class ProfilesController < ApplicationController
   end
 
   def public
+    @user = User.new
   end
 
   private

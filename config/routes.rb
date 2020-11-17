@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :items
   end
 
-  resources :profiles
 
-  get 'public_profile/:id', to: "profiles#public", as: :public_profile
+  get 'public_profil/:id', to: "pages#public", as: :public_profil
+  get 'generate', to: "pages#generate", as: :generate
 end
