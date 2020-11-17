@@ -12,7 +12,6 @@
     </div>
   </div>
   <br>
-
   <% if current_user.nil? %>
     <h4>To reach <%= @user.incomplete_name %> please <%= link_to 'sign-up', new_user_registration_path %> or <%= link_to 'sign-in', new_user_session_path %> </h4>"
   <% else %>
