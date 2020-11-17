@@ -1,6 +1,6 @@
 <div class="container">
   <br>
-  <h3>Hello! Looks like you found an item that belongs to: <strong><%= @user.first_name %> <%= @user.last_name %></strong> </h3>
+  <h3>Hello! Looks like you found an item that belongs to: <strong><%= @user.first_name %> <%= @user.last_name[0] %>.</strong> </h3>
   <div class="row p-2">
     <div class="col-3">
       <% tag = 'defaultavatar' %>
@@ -13,6 +13,7 @@
   </div>
   <br>
   <br>
+  <% unless user_signed_in?%>
   <h4>To reach Thibault please create a free account</h4>
     <%= simple_form_for(@user_new, url: registration_path(@user_new)) do |f| %>
       <%= f.error_notification %>
@@ -35,5 +36,8 @@
         <%= f.button :submit, "Sign up" %>
       </div>
     <% end %>
+  <% else %>
+  <p>here we need to put a chatbox of the discusion</p>
+  <% end %>
 
 </div>

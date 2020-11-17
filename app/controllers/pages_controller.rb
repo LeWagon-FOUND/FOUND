@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
-  before_action :set_user, only: [:public, :dashboard, :generate]
+  skip_before_action :authenticate_user!, only: [ :home, :public]
+  before_action :set_user, only: [ :dashboard, :generate]
 
   def home
   end
@@ -17,6 +17,7 @@ class PagesController < ApplicationController
 
   def public
     @user_new = User.new
+    @user = User.find(params[:id])
   end
 
   private
