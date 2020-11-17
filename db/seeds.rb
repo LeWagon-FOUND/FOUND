@@ -11,8 +11,8 @@ require 'open-uri'
 puts "Cleaning up the DB"
   Item.destroy_all
   Message.destroy_all
-  Profile.destroy_all
   Chatroom.destroy_all
+  Profile.destroy_all
   User.destroy_all
 puts "          ... done!"
 
@@ -36,24 +36,18 @@ puts "Creating Users"
   file = URI.open("https://avatars3.githubusercontent.com/u/71701904?v=4")
   User.create!(email: 'charles.delalaing@gmail.com', password: '123456', password_confirmation: '123456')
   Profile.create!(first_name: 'Charles', last_name: "de Lalaing", user_id: User.last.id).avatar.attach(io: file, filename: 'cover.png', content_type: 'image/png')
-
-  users = []
-  User.all.each { |user| users << user.id }
 puts "          ... done!"
 
 puts "Creating two chatrooms"
-  Chatroom.create!(name: "general", user_id: users.sample, finder_user_id: users.sample)
-  Chatroom.create!(name: "not general", user_id: users.sample, finder_user_id: users.sample)
-
-  chatrooms = []
-  Chatroom.all.each { |chatroom| chatrooms << chatroom.id }
+  Chatroom.create!(name: "general", user_id: User.ids.sample, finder_user_id: User.ids.sample)
+  Chatroom.create!(name: "not general", user_id: User.ids.sample, finder_user_id: User.ids.sample)
 puts "          ... done!"
 
 puts "Creating some random messages"
-  10.times { Message.create!(content: Faker::Quote.yoda, user_id: users.sample, chatroom_id: chatrooms.sample) }
+  15.times { Message.create!(content: Faker::Quote.yoda, user_id: User.ids.sample, chatroom_id: Chatroom.ids.sample) }
 puts "          ... done!"
 
 puts "Creating some random objects"
   notification = ["true", "false"]
-  30.times { Item.create!(name: Faker::Beer.brand, user_id: users.sample, message: Faker::Hacker.say_something_smart, notification: notification.sample) }
+  30.times { Item.create!(name: Faker::Beer.brand, user_id: User.ids.sample, message: Faker::Hacker.say_something_smart, notification: notification.sample) }
 puts "          ... done!"
