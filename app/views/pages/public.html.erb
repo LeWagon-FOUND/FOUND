@@ -1,0 +1,39 @@
+<div class="container">
+  <br>
+  <h3>Hello! Looks like you found an item that belongs to: <strong><%= @user.first_name %> <%= @user.last_name %></strong> </h3>
+  <div class="row p-2">
+    <div class="col-3">
+      <% tag = 'defaultavatar' %>
+      <% tag = @user.avatar.key if @user.avatar.attached? == true %>
+      <%= cl_image_tag tag, class: "avatar-large" %>
+    </div>
+    <div class="col-9">
+      <p class="text-justify"><%= @user.generic_message %></p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <h4>To reach Thibault please create a free account</h4>
+    <%= simple_form_for(@user_new, url: registration_path(@user_new)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+
+</div>
