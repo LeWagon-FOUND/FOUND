@@ -7,7 +7,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @chatrooms = Chatroom.where(user_id: current_user).or(Chatroom.where(finder_user_id: current_user))
-    pp @chatrooms
   end
 
   def generate
