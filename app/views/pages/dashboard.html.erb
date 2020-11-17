@@ -1,7 +1,3 @@
-<% if   @profile.nil? %>
-<h1>You don"t have any profile yet, create one and get your QR code!</h1>
-<%= link_to "Create your profile", new_profile_path %>
-<% else %>
 <div class="one">
   <div class="container py-4">
     <h1> Because Loosing stuff belong to the past,</h1>
@@ -15,6 +11,10 @@
         <h3>And the best is that it is as cheap as free.</h3>
       </div>
     </div>
+    <% unless @user.svg %>
+      <h4>You don't have a QR code yet!</h4>
+      <%= link_to "Generate one!", generate_path %>
+    <% end %>
   </div>
 </div>
 <div class="two text-white">
@@ -24,9 +24,12 @@
         <br>
         <br>
         <h2>Stick this QR code to all your belongings</h2>
+        <br>
+        <br>
+        <%= link_to "See what other will see", public_profil_path(@user), class: "btn-found" %>
       </div>
       <div class="col-12 col-md-4 offset-md-6" id="svg">
-        <%= @profile.svg.html_safe %>
+        <%= @user.svg.html_safe if @user.svg %>
       </div>
     </div>
 
@@ -45,7 +48,7 @@
 </div>
 <div class="one d-flex justify-content-center align-items-center">
   <div class="container d-flex justify-content-center align-items-center">
-    <%= link_to "View your public profile", public_profile_path(current_user), id: "pp" %>
+    <%= link_to "View your public profile", public_profil_path(current_user), id: "pp" %>
   </div>
 </div>
 <div class="two">
@@ -123,5 +126,4 @@
 
 
 
-<% end %>
 
