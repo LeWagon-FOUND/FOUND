@@ -33,6 +33,7 @@ puts "Creating Users"
   # User.create!(email: 'Charles.delalaing@gmail.com', password: '123456', password_confirmation: '123456')
   # Profile.create!(first_name: 'Charles', last_name: "de Lalaing", user_id: User.last.id).avatar.attach(io: file, filename: 'cover.png', content_type: 'image/png')
 
+
   users = []
   User.all.each { |user| users << user.id }
 puts "          ... done!"
