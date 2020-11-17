@@ -7,10 +7,6 @@ class ProfilesController < ApplicationController
   def show
   end
 
-  def new
-    @profile = Profile.new
-  end
-
   def create
     url = "http://localhost:3000/public_profile/#{current_user.id}"
     profile = Profile.new(profile_params)
