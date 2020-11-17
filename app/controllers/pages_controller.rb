@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
+
   skip_before_action :authenticate_user!, only: [ :home, :public]
   before_action :set_user, only: [ :dashboard, :generate]
-
   def home
   end
 
   def dashboard
+    @chatrooms = Chatroom.where(user_id: current_user).or(Chatroom.where(finder_user_id: current_user))
   end
 
   def generate
@@ -16,8 +17,9 @@ class PagesController < ApplicationController
   end
 
   def public
-    @user_new = User.new
     @user = User.find(params[:id])
+    @chatroom = Chatroom.new
+    @finder = User.new
   end
 
   private
@@ -36,5 +38,4 @@ class PagesController < ApplicationController
       standalone: true
     )
   end
-
 end

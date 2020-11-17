@@ -11,38 +11,23 @@
         <h3>And the best is that it is as cheap as free.</h3>
       </div>
     </div>
-    <% unless @user.svg %>
-      <h4>You don't have a QR code yet!</h4>
-      <%= link_to "Generate one!", generate_path %>
-    <% end %>
   </div>
 </div>
-<div class="two text-white">
+<div class="two text-center">
   <div class="container position-relative">
-    <div class="row">
-      <div class="col-6 t-50">
-        <br>
-        <br>
-        <h2>Stick this QR code to all your belongings</h2>
-        <br>
-        <br>
-        <%= link_to "See what other will see", public_profil_path(@user), class: "btn-found" %>
-      </div>
-      <div class="col-12 col-md-4 offset-md-6" id="svg">
-        <%= @user.svg.html_safe if @user.svg %>
-      </div>
-    </div>
-
+    <h2>Stick this QR code to all your belongings</h2>
+    <%= RQRCode::QRCode.new(public_profil_url(@user)).as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6,
+      standalone: true
+    ).html_safe %>
   </div>
 </div>
 <div class="three">
   <div class="container">
-    <br>
-    <br>
-    <br>
     <h3>Reward the founder with a donation to your favorite NGO.</h3>
-    <br>
-    <br>
     <h4>Choose from a list of NGO's you will donate to when someone find one valuable thing you losted!</h4>
   </div>
 </div>
@@ -53,77 +38,10 @@
 </div>
 <div class="two">
   <div class="container">
-
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+        <li><%= link_to "Chatroom: #{chatroom.name} User_id: #{chatroom.user_id} Finder_user_id: #{chatroom.finder_user_id}", chatroom_path(chatroom) %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
-<div class="three">
-  <div class="container">
-
-  </div>
-</div>
-<div class="one">
-  <div class="container">
-
-  </div>
-</div>
-<div class="two">
-  <div class="container">
-
-  </div>
-</div>
-<div class="three">
-  <div class="container">
-
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
