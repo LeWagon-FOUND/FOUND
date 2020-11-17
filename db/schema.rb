@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_102726) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.text "generic_message"
+    t.text "generic_message", default: "Hello, I lost this item, please follow the instructions to contact me!"
     t.date "birthdate"
     t.text "svg"
     t.index ["email"], name: "index_users_on_email", unique: true
