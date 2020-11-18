@@ -51,7 +51,7 @@
         </button>
       </div>
       <div class="modal-body text-center">
-        <%= RQRCode::QRCode.new(public_profil_url(current_user)).as_svg(
+        <%= RQRCode::QRCode.new(public_profile_url(current_user)).as_svg(
           offset: 0,
           color: '000',
           shape_rendering: 'crispEdges',
