@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 require 'open-uri'
 
@@ -58,15 +51,6 @@ puts "Creating Users"
                 first_name: 'Charles',
                 last_name: "de Lalaing"
                 ).avatar.attach(io: file, filename: 'avatar.jpg', content_type: 'image/jpg')
-puts "          ... done!"
-
-puts "Creating two chatrooms"
-  Chatroom.create!(name: "general", user_id: User.ids.sample, finder_user_id: User.ids.sample)
-  Chatroom.create!(name: "not general", user_id: User.ids.sample, finder_user_id: User.ids.sample)
-puts "          ... done!"
-
-puts "Creating some random messages"
-  15.times { Message.create!(content: Faker::Quote.yoda, user_id: User.ids.sample, chatroom_id: Chatroom.ids.sample) }
 puts "          ... done!"
 
 puts "Creating some random objects"

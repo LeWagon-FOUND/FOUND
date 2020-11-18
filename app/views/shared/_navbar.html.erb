@@ -13,9 +13,6 @@
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Chatrooms", chatrooms_path, class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
           <% tag = 'defaultavatar' %>
           <% tag = current_user.avatar.key if current_user.avatar.attached? == true %>
@@ -23,6 +20,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
             <%= link_to "My Items", user_items_path, class: "dropdown-item" %>
+            <%= link_to "My Public Profile", public_profile_path(current_user), class: "dropdown-item" %>
             <%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>

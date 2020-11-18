@@ -1,5 +1,5 @@
 <div class="one">
-  <div class="container py-4">
+  <div class="container py-4 text-center">
     <h1> Because Loosing stuff belong to the past,</h1>
     <h1>we introduce you <strong>FOUND</strong></h1>
     <br>
@@ -13,10 +13,10 @@
     </div>
   </div>
 </div>
-<div class="two text-center">
-  <div class="container position-relative">
+<div class="two d-flex justify-content-center align-items-center">
+  <div class="container d-flex justify-content-center align-items-center flex-column">
     <h2>Stick this QR code to all your belongings</h2>
-    <%= RQRCode::QRCode.new(public_profil_url(@user)).as_svg(
+    <%= RQRCode::QRCode.new(public_profile_url(@user)).as_svg(
       offset: 0,
       color: '000',
       shape_rendering: 'crispEdges',
@@ -25,23 +25,34 @@
     ).html_safe %>
   </div>
 </div>
-<div class="three">
-  <div class="container">
-    <h3>Reward the founder with a donation to your favorite NGO.</h3>
-    <h4>Choose from a list of NGO's you will donate to when someone find one valuable thing you losted!</h4>
+<div class="three d-flex justify-content-center align-items-center">
+  <div class="container d-flex justify-content-center align-items-center">
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+        <h1>#<%= chatroom.name %></h1>
+          <!-- List of Messages -->
+          <div id="messages" data-chatroom-id="<%= chatroom.id %>">
+            <% chatroom.messages.each do |message| %>
+              <div class="message-container" id="message-<%= message.id %>">
+                <i class="author">
+                  <span><%= message.user.full_name %></span>
+                  <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                </i>
+                <p><%= message.content %></p>
+              </div>
+            <% end %>
+          </div>
+          <!-- Create a new message -->
+          <%= simple_form_for [ chatroom, @message ], remote: true do |f| %>
+            <%= f.input :content, label: false, placeholder: "Message ##{chatroom.name}" %>
+          <% end %>
+      <% end %>
+    </ul>
   </div>
 </div>
 <div class="one d-flex justify-content-center align-items-center">
-  <div class="container d-flex justify-content-center align-items-center">
-    <%= link_to "View your public profile", public_profil_path(current_user), id: "pp" %>
-  </div>
-</div>
-<div class="two">
-  <div class="container">
-    <ul>
-      <% @chatrooms.each do |chatroom| %>
-        <li><%= link_to "Chatroom: #{chatroom.name} User_id: #{chatroom.user_id} Finder_user_id: #{chatroom.finder_user_id}", chatroom_path(chatroom) %></li>
-      <% end %>
-    </ul>
+  <div class="container d-flex justify-content-center align-items-center flex-column">
+    <h3>Reward the founder with a donation to your favorite NGO.</h3>
+    <h4>Choose from a list of NGO's you will donate to when someone find one valuable thing you losted!</h4>
   </div>
 </div>
