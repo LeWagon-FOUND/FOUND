@@ -44,14 +44,14 @@ section {
     border-radius: 2rem;
 }
 
-.card-wrapper {
+.teamcard-wrapper {
     display: flex;
-    align-items: center; 
+    align-items: center;
     align-content: center;
     flex-direction: column;
 }
 
-.card {
+.teamcard {
     width: 32rem;
     background-color: #ebeef8;
     display: flex;
@@ -62,7 +62,7 @@ section {
     box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
 }
 
-.card .card-img {
+.teamcard .teamcard-img {
     width: 100%;
     height: 26rem;
     object-fit: cover;
@@ -80,7 +80,7 @@ section {
     border: 1rem solid #ebeef8;
 }
 
-.card h1 {
+.teamcard h1 {
     font-size: 2.5rem;
     color: #333;
     margin: 1.5rem 0;
@@ -100,7 +100,7 @@ section {
     color: #333;
 }
 
-.card .btn {
+.teamcard .btn {
     padding: 1rem 2.5rem;
     background-color: #445ae3;
     border-radius: 2rem;
@@ -111,12 +111,12 @@ section {
     transition: all .5s;
 }
 
-.card .btn:hover {
+.teamcard .btn:hover {
     transform: translateY(-2px);
     box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
 }
 
-.card .btn:active {
+.teamcard .btn:active {
     transform: translateY(0);
     box-shadow: none;
 }
@@ -163,14 +163,14 @@ section {
 
 
 @media screen and (min-width: 700px) {
-    .card-wrapper {
+    .teamcard-wrapper {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
 
-    .card {
+    .teamcard {
         margin: 2rem;
     }
 
@@ -184,24 +184,24 @@ section {
 
     }
 
-    
-        .card:nth-child(1) {
+
+        .teamcard:nth-child(1) {
             animation: fadeIn .5s .5s backwards;
         }
 
-        .card:nth-child(2) {
+        .teamcard:nth-child(2) {
             animation: fadeIn .5s 1s backwards;
         }
 
-        .card:nth-child(3) {
+        .teamcard:nth-child(3) {
             animation: fadeIn .5s 1.5s backwards;
         }
 
-        .card:nth-child(4) {
+        .teamcard:nth-child(4) {
             animation: fadeIn .5s 2s backwards;
         }
 
-        .card:nth-child(5) {
+        .teamcard:nth-child(5) {
             animation: fadeIn .5s 2.5s backwards;
         }
 }

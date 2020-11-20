@@ -12,12 +12,17 @@
       <h1 class="logo">FOUNDR</h1>
 
       <ul class="menu">
-        <li><a href="/dashboard">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/team">The team</a></li>
         <li><a href="/user/items">My items</a></li>
         <li><a href="#">Services</a></li>
-        <li><a href="/users/edit">My profile</a></li>
+        <% if user_signed_in? %>
+          <li><a href="/users/edit">Profile</a></li>
+        <% else %>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
       </ul>
+
     </header>
     <div class="banner-text">
       <h2>TIRED OF LOSING YOUR BELONGINS?</h2>
@@ -34,7 +39,7 @@
       'label' : ''
   });
   </script>
- 
+
 </body>
 </html>
 

@@ -12,8 +12,8 @@
         <p class="card-text"> <%= item.message %></p>
       </div>
       <div class="card-body d-flex justify-content-around align-items-end">
-        <%= link_to "<i class=\"fas fa-qrcode\"></i>".html_safe, "qrcode",  { 'data-toggle': "modal",  'data-target': "#qrModal" } %>
-        <%= link_to "<i class=\"fas fa-binoculars\"></i>".html_safe, user_item_path(item) %>
+        <%= link_to "<i class=\"fas fa-qrcode text-dark\"></i>".html_safe, "qrcode",  { 'data-toggle': "modal",  'data-target': "#qrModal" } %>
+        <%= link_to "<i class=\"fas fa-binoculars text-primary\"></i>".html_safe, user_item_path(item) %>
         <%= link_to "<i class=\"far fa-edit\"></i>".html_safe, edit_user_item_path(item), class: "text-warning" %>
         <%= link_to "<i class=\"far fa-trash-alt\"></i>".html_safe, user_item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %>
       </div>

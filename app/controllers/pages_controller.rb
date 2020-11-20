@@ -28,17 +28,6 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  # def get_svg_code(url)
-  #   qrcode = RQRCode::QRCode.new(url)
-  #   svg = qrcode.as_svg(
-  #     offset: 0,
-  #     color: '000',
-  #     shape_rendering: 'crispEdges',
-  #     module_size: 6,
-  #     standalone: true
-  #   )
-  # end
-
   def chatroom_params
     params.require(:chatroom).permit(:user)
   end
