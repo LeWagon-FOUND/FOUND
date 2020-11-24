@@ -25,14 +25,6 @@
   <p>Stick the QR code on what matters the most to you, and increase your chances of getting it back when losing it.</p>
   </div>
 
-  <%= RQRCode::QRCode.new(public_profile_url(@user)).as_svg(
-        offset: 0,    
-        color: '000',   
-        shape_rendering: 'crispEdges',    
-        module_size: 6,    
-        standalone: true).html_safe %>
-
-
   <ul>
     <li class="reseaux"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
     <li class="reseaux"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
