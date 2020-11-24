@@ -13,5 +13,6 @@
     <%= render 'shared/navbar' unless (params[:controller] == 'devise/sessions' || params[:controller] == 'devise/registrations' || !user_signed_in?) %>
     <%= yield %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/footer' unless !user_signed_in? %>
   </body>
 </html>
