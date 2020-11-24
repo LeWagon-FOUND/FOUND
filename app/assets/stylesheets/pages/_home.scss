@@ -1,7 +1,7 @@
   // Specific CSS for your home-page
 .banner-area {
   background-image: url("https://wallpapercave.com/wp/wp5006298.jpg");
-  background-position: center center;
+  background-position: center top;
   -webkit-background-size: cover;
   background-size: cover;
   height: 100vh;
@@ -12,33 +12,27 @@ body {
   padding: 0;
 }
 
+// .dropdown-item {
+//   width: 100px;
+//   height: 50px;
+//   line-height: 50px;
+//   text-align: center;
+//   color: black;
+//   font-size: 13px;
+// }
 
-.dropdown-item {
-  width: 100px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  color: black;
-  font-size: 13px;
-}
-
-.nav-item {
-  width: 100px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  color: black;
-  font-size: 13px;
-}
-
-header {
-  padding: 15px 60px;
-}
+// .nav-item {
+//   width: 100px;
+//   height: 50px;
+//   line-height: 50px;
+//   text-align: center;
+//   color: black;
+//   font-size: 13px;
+// }
 
 .menu {
-  width: 42%;
-  float: right;
-  list-style: none;
+  width: 100%;
+  background-color: gray
 }
 
 .menu li {
@@ -48,7 +42,6 @@ header {
   text-align: center;
   color: #fff;
   font-size: 13px;
-  float: left;
 }
 
 .menu li:hover {
@@ -58,7 +51,6 @@ header {
 .menu li:hover a {
   color: black;
 }
-
 
 .menu li a {
   text-decoration: none;
@@ -146,21 +138,21 @@ header {
     border-radius: 5px;
     background-color: yellow;
   }
-  
+
   .slicknav_menu .slicknav_menutxt {
     color: #000;
     text-shadow: none;
   }
-  
+
   .slicknav_menu .slicknav_icon-bar {
     background-color: #262626;
     box-shadow: none;
   }
-  
+
   .banner-text {
     top: 55%;
   }
-  
+
   .header {
     padding: 5px 10px;
   }
