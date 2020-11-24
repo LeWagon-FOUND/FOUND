@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_102726) do
+ActiveRecord::Schema.define(version: 2020_11_23_110140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_102726) do
     t.text "generic_message", default: "Hello, I lost this item, please follow the instructions to contact me!"
     t.date "birthdate"
     t.text "svg"
+    t.string "otp_secret_key"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
