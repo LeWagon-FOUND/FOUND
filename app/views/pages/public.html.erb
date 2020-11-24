@@ -1,23 +1,23 @@
-<div class="container">
-  <br>
-  <h3>Hello! Looks like you found an item that belongs to: <strong><%= @user.incomplete_name %></strong> </h3>
-  <div class="row p-2">
-    <div class="col-3">
+<h1>Looks like you found a lost item!</h1>
+<div class="d-flex justify-content-center">
+  <div class="w-25 text-center">
       <% tag = 'defaultavatar' %>
       <% tag = @user.avatar.key if @user.avatar.attached? == true %>
-      <%= cl_image_tag tag, class: "avatar-large" %>
-    </div>
-    <div class="col-9">
-      <p class="text-justify"><%= @user.generic_message %></p>
-    </div>
+      <%= cl_image_tag tag, class: "avatar-huge" %>
+      <br>
+      <p><strong><%= @user.incomplete_name %></strong></p>
+      <p><%= @user.generic_message %></p>
   </div>
-  <br>
-  <% if current_user.nil? %>
-    <h4>To reach <%= @user.incomplete_name %> please <%= link_to 'sign-up', new_user_registration_path %> or <%= link_to 'sign-in', new_user_session_path %> </h4>"
-  <% else %>
+
+  <div class="w-25 d-flex justify-content-center align-items-center">
+    <% if current_user.nil? %>
+      <h2>To reach <strong><%= @user.incomplete_name %></strong><br>please <%= link_to 'sign-up', new_user_registration_path, class: "btn btn-outline-primary" %> or <%= link_to 'sign-in', new_user_session_path, class: "btn btn-outline-primary" %> </h2>"
+    <% else %>
       <%= simple_form_for Chatroom.new do |f| %>
-      <%= f.input :user_id, input_html: {value: @user.id}, as: :hidden %>
-        <h4> <%= f.submit 'start the chat' %></h4>"
+        <%= f.input :user_id, input_html: {value: @user.id}, as: :hidden %>
+        <%= f.input :item_id, input_html: {value: @item.id}, as: :hidden %>
+        <h4><%= f.submit 'Start the chat' %></h4>"
       <% end %>
-  <% end %>
+    <% end %>
+  </div>
 </div>
