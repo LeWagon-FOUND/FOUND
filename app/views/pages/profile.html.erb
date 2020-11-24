@@ -10,7 +10,8 @@
           standalone: true
           ).html_safe %>
     </div>
-
+  </div>
+  <div class="row">
     <% @chatrooms.each do |chatroom| %>
       <div class="col border">
           <h3><%= chatroom.name %></h3>
@@ -34,3 +35,4 @@
    <% end %>
  </div>
 </div>
+
