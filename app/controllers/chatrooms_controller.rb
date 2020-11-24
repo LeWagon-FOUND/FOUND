@@ -7,7 +7,18 @@ class ChatroomsController < ApplicationController
       chatroom_name = "#{current_user.incomplete_name} - #{User.find(params[:chatroom][:user_id]).incomplete_name}"
       Chatroom.create!(name: chatroom_name, finder_user_id: current_user.id, user_id: params[:chatroom][:user_id])
     end
-    redirect_to profile_path
+    redirect_to chatrooms_path
+  end
+
+  def index
+    @chatrooms = Chatroom.where(user_id: current_user).or(Chatroom.where(finder_user_id: current_user))
+    @message = Message.new
+  end
+
+  def destroy
+    Message.where(chatroom_id: params[:id]).destroy_all
+    Chatroom.find(params[:id]).destroy
+    redirect_to chatrooms_path
   end
 
   private

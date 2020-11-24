@@ -4,6 +4,7 @@
     <% if user_signed_in? %>
         <li class="list-inline-item"><%= link_to "Dashboard", dashboard_path %></li>
         <li class="list-inline-item"><%= link_to "My Items", user_items_path %></li>
+        <li class="list-inline-item"><%= link_to "Chatrooms", chatrooms_path %></li>
         <li class="list-inline-item"><%= link_to "Edit profile", edit_user_registration_path %></li>
         <li class="list-inline-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% tag = 'defaultavatar' %>
