@@ -1,70 +1,11 @@
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Introducing FOUNDR</title>
-  <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="slicknav.css">
-
-</head>
-<body>
-  <div class="banner-area">
-    <header>
-      <h1 class="logo">FOUNDR</h1>
-
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to dashboard_path, class: "navbar-brand" do %>
-      <% end %>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <% tag = 'defaultavatar' %>
-            <% tag = current_user.avatar.key if current_user.avatar.attached? == true %>
-            <%= cl_image_tag tag, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-              <%= link_to "My Items", user_items_path, class: "dropdown-item" %>
-              <%= link_to "My Public Profile", public_profile_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+<div class="banner-area">
+  <h1 class="logo">FOUNDR</h1>
+  <div class="banner-text">
+    <h2>TIRED OF LOSING YOUR BELONGINS?</h2>
+    <p>Sign up to get more chances of finding it back</p>
+    <% unless user_signed_in? %>
+      <%= link_to "Login!", new_user_session_path, class: "nav-link" %></li>
+      <%= link_to "Sign Up!", new_user_registration_path, class: "nav-link" %></li>
+    <% end %>
   </div>
-
-    </header>
-    <div class="banner-text">
-      <h2>TIRED OF LOSING YOUR BELONGINS?</h2>
-      <p>Sign up to get more chances of finding it back</p>
-      <% unless user_signed_in? %>
-        <a href="/dashboard">Sign up!</a>
-      <% end %>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="jquery.slicknav.js"></script>
-  <script>
-  $(".menu").slicknav({
-      'appendTo' : 'header'
-      'label' : ''
-  });
-  </script>
-
-</body>
-</html>
-
+</div>
