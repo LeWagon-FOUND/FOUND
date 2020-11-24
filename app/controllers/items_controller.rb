@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   def edit; end
 
   def update
-    @item = Item.find(params[:format])            ### ???????????????????????
+    @item = Item.find(params[:format])
     @item.update(item_params)
     redirect_to user_items_path
   end

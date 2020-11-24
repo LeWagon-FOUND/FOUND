@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col border">
+      <h3>This is your generic QR Code</h3>
+        <%= RQRCode::QRCode.new(public_profile_url(current_user)).as_svg(
+          offset: 0,
+          color: '000',
+          shape_rendering: 'crispEdges',
+          module_size: 6,
+          standalone: true
+          ).html_safe %>
+    </div>
+
+    <% @chatrooms.each do |chatroom| %>
+      <div class="col border">
+          <h3><%= chatroom.name %></h3>
+            <!-- List of Messages -->
+            <div id="messages" data-chatroom-id="<%= chatroom.id %>">
+              <% chatroom.messages.each do |message| %>
+                <div class="message-container" id="message-<%= message.id %>">
+                  <i class="author">
+                    <span><%= message.user.full_name %></span>
+                    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                  </i>
+                  <p><%= message.content %></p>
+                </div>
+              <% end %>
+            </div>
+            <!-- Create a new message -->
+            <%= simple_form_for [ chatroom, @message ], remote: true do |f| %>
+              <%= f.input :content, label: false, placeholder: "Message" %>
+            <% end %>
+      </div>
+   <% end %>
+ </div>
+</div>

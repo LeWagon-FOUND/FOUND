@@ -4,20 +4,20 @@ class PagesController < ApplicationController
 
   def home; end
 
-  def dashboard
+  def profile
     @chatrooms = Chatroom.where(user_id: current_user).or(Chatroom.where(finder_user_id: current_user))
     @message = Message.new
   end
 
-  # def generate
-  #   url = "http://localhost:3000/public_profile/#{@user.id}"
-  #   @user.svg = get_svg_code(url)
-  #   @user.save
-  #   redirect_to dashboard_path
-  # end
-
   def public
     @user = User.find(params[:id])
+    @chatroom = Chatroom.new
+    @finder = User.new
+  end
+
+  def item
+    @item = Item.find(params[:id])
+    @user = @item.user
     @chatroom = Chatroom.new
     @finder = User.new
   end
