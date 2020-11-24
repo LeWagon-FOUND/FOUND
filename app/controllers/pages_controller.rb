@@ -4,11 +4,6 @@ class PagesController < ApplicationController
 
   def home; end
 
-  def profile
-    @chatrooms = Chatroom.where(user_id: current_user).or(Chatroom.where(finder_user_id: current_user))
-    @message = Message.new
-  end
-
   def public
     @user = User.find(params[:id])
     @chatroom = Chatroom.new
