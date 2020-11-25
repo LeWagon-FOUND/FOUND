@@ -7,41 +7,19 @@
   height: 100vh;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-// .dropdown-item {
-//   width: 100px;
-//   height: 50px;
-//   line-height: 50px;
-//   text-align: center;
-//   color: black;
-//   font-size: 13px;
-// }
-
-// .nav-item {
-//   width: 100px;
-//   height: 50px;
-//   line-height: 50px;
-//   text-align: center;
-//   color: black;
-//   font-size: 13px;
-// }
-
 .menu {
   width: 100%;
-  background-color: gray
+  background-color: #CCC9E7;
 }
 
 .menu li {
-  width: 100px;
+  width: 110px;
   height: 50px;
   line-height: 50px;
   text-align: center;
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .menu li:hover {
@@ -109,8 +87,6 @@ body {
   transition: .9s;
   color: black;
 }
-
-
 
 @media all and (max-width: 769px){
   .slicknav_menu{
