@@ -15,7 +15,6 @@
     <% else %>
       <%= simple_form_for Chatroom.new do |f| %>
         <%= f.input :user_id, input_html: {value: @user.id}, as: :hidden %>
-        <%= f.input :item_id, input_html: {value: @item.id}, as: :hidden %>
         <h4><%= f.submit 'Start the chat' %></h4>"
       <% end %>
     <% end %>
