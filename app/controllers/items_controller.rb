@@ -40,4 +40,9 @@ class ItemsController < ApplicationController
   def item_select
     @item = Item.find(params[:id])
   end
+
+  def download
+    send_file 'public/arthur-cv.pdf', type: 'pdf', status: 202
+end
+  
 end
