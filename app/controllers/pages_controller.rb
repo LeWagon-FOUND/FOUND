@@ -2,7 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home public item]
   before_action :set_user, only: %i[dashboard generate]
 
-  def home; end
+  def home
+    redirect_to user_items_path if user_signed_in?
+  end
 
   def public
     @user = User.find(params[:id])
