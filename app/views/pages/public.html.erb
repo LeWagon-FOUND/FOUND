@@ -11,11 +11,11 @@
 
   <div class="w-25 d-flex justify-content-center align-items-center">
     <% if current_user.nil? %>
-      <h2>To reach <strong><%= @user.incomplete_name %></strong><br>please <%= link_to 'sign-up', new_user_registration_path, class: "btn btn-outline-primary" %> or <%= link_to 'sign-in', new_user_session_path, class: "btn btn-outline-primary" %> </h2>"
+      <h2>To reach <strong><%= @user.incomplete_name %></strong><br>please <%= link_to 'sign-up', new_user_registration_path, class: "btn btn-outline-primary" %> or <%= link_to 'sign-in', new_user_session_path, class: "btn btn-outline-primary" %> </h2>
     <% else %>
       <%= simple_form_for Chatroom.new do |f| %>
         <%= f.input :user_id, input_html: {value: @user.id}, as: :hidden %>
-        <h4><%= f.submit 'Start the chat' %></h4>"
+        <h4><%= f.submit 'Start the chat' %></h4>
       <% end %>
     <% end %>
   </div>
