@@ -31,8 +31,8 @@
         <%= item.qrcode %>
       </h3>
       <%#   <div class="btn-download">
-          <%= svg = qrModal.as_svg( offset: 0, color: "000", shape_rendering: 'crispEdges', module_size: 6, standalone: true ).html_safe %>      
-     
+          <%= svg = qrModal.as_svg( offset: 0, color: "000", shape_rendering: 'crispEdges', module_size: 6, standalone: true ).html_safe %>
+
     </div>
   <% end %>
 
@@ -92,7 +92,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-center">
+      <div class="modal-body text-center" id="qr-body-general">
         <%= RQRCode::QRCode.new(public_profile_url(current_user)).as_svg(
           offset: 0,
           color: '000',
@@ -101,6 +101,7 @@
           standalone: true
           ).html_safe %>
       </div>
+      <button class="button-print" data-div-id="qr-body-general">print QR code</button>
     </div>
   </div>
 </div>
