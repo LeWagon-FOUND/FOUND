@@ -23,6 +23,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import printJS from "print-js";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,3 +34,12 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initChatroomCable()
 });
+
+let buttons = document.querySelectorAll('.button-print')
+buttons.forEach((button)=>{
+  button.addEventListener("click", (event)=> {
+    event.preventDefault()
+    let div=event.currentTarget.dataset.divId
+    printJS(div,"html")
+  })
+})
