@@ -1,4 +1,4 @@
-<div class="container">
+<div class="chatroom container">
   <%= "<br><br><br><h1>You do not have any chatrooms</h1>".html_safe if @chatrooms.size == 0 %>
   <div class="row">
     <% @chatrooms.each do |chatroom| %>
@@ -10,10 +10,10 @@
               <% chatroom.messages.each do |message| %>
                 <div class="message-container" id="message-<%= message.id %>">
                   <i class="author">
-                    <span><%= message.user.full_name %></span>
-                    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                    <span><%= message.user.incomplete_name %></span>
+                    <small>(<%= message.created_at.strftime("%d/%m/%Y at %H:%M") %>)</small>
                   </i>
-                  <p><%= message.content %></p>
+                  <p class="ml-5"><%= message.content %></p>
                 </div>
               <% end %>
             </div>
