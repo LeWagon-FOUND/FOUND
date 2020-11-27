@@ -9,21 +9,45 @@ background-image: url("https://www.transparenttextures.com/patterns/60-lines.png
   display: flex;
   flex-direction: column;
 }
+
+.text-left {
+  text-align: left !important;
+  color: #fff;
+}
+
+
+.m-3 {
+  margin: 3rem !important;
+}
+
+.w-25 {
+  width: 30% !important;
+}
+
+.border-primary {
+  border-color: #fff !important;
+}
+
+.border {
+  border: 10px solid #fff !important;
+}
+
 .chatbox .userinfo {
   font-weight: bold;
 }
 
 .chatroom .messagedate {
   font-style: italic;
-  color: #404040
+  color: #fff;
 }
 
 .chatroom .author {
-  color: purple;
+  color: #fff;
 }
 
 .chatroom .newmessage {
   flex-grow: 1;
+  color: #fff;
 }
 
 .chatbox .reply {
