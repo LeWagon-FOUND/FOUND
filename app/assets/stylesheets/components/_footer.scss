@@ -1,19 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 
 .footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  background-color: #CCC9E7;
-  color: white;
-  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+  font-family: 'Nunito', sans-serif;
   font-weight:300;
-  color:#FFF;
-  height: 30px;
+  height: 50px;
 }
 
 .footer h3{
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 15px;
   font-weight: 300;
 }
