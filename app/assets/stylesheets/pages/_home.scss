@@ -9,7 +9,9 @@
 
 .menu {
   width: 100%;
-  background-color: #CCC9E7;
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .menu li {
@@ -17,23 +19,25 @@
   height: 50px;
   line-height: 50px;
   text-align: center;
-  color: #fff;
+  color: #029c8f;
   font-size: 15px;
   font-weight: bold;
 }
 
 .menu li:hover {
-  background: white;
+  background: #029c8f;
+    background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+
 }
 
 .menu li:hover a {
-  color: #CCC9E7;
+  color: #fff;
 }
 
 .menu li a {
   text-decoration: none;
   font-family: 'Open Sans', sans-serif;
-  color: #fff;
+  color: #029c8f;
 }
 
 .logo {
