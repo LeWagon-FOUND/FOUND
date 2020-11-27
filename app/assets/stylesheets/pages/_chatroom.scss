@@ -1,14 +1,28 @@
-.chatroom {
+.chatbox {
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
 }
-.chatroom h3 {
-  color: blue;
+.chatbox .userinfo {
+  font-weight: bold;
 }
 
-.chatroom .message-container {
-  color: black;
+.chatroom .messagedate {
+  font-style: italic;
+  color: #404040
 }
 
 .chatroom .author {
   color: purple;
+}
+
+.chatroom .newmessage {
+  flex-grow: 1;
+}
+
+.chatbox .reply {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
 }

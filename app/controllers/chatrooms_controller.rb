@@ -4,7 +4,7 @@ class ChatroomsController < ApplicationController
       chatroom_name = Item.find(params[:chatroom][:item_id]).name.to_s
       Chatroom.create!(name: chatroom_name, finder_user_id: current_user.id, user_id: params[:chatroom][:user_id])
     else
-      chatroom_name = "#{current_user.incomplete_name} - #{User.find(params[:chatroom][:user_id]).incomplete_name}"
+      chatroom_name = "#{current_user.first_name} and #{User.find(params[:chatroom][:user_id]).first_name}"
       Chatroom.create!(name: chatroom_name, finder_user_id: current_user.id, user_id: params[:chatroom][:user_id])
     end
     redirect_to chatrooms_path
